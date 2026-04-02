@@ -37,3 +37,4 @@ When `VITE_GA_MEASUREMENT_ID` is set, the app tracks:
 - Check responsive rendering on mobile and desktop breakpoints.
 - Validate social previews (Open Graph and Twitter image/title/description).
 - Configure production domain and SSL in your deployment provider.
+- Deployed with Cloudflare
