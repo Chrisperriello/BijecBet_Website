@@ -10,7 +10,7 @@ export default function LogoRail() {
     >
       <div className="rounded-md border border-slate-800 bg-surface p-5 sm:p-6">
         <p className="mb-4 text-center text-xs font-medium uppercase tracking-[0.2em] text-slate-400">
-          Monitored sports books (logos pending final assets)
+          Monitored sports books (Not Associated)
         </p>
         <div className="grid grid-cols-2 gap-3 sm:grid-cols-3 lg:grid-cols-4">
           {partnerLogoPlaceholders.map((slot) => (
