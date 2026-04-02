@@ -12,11 +12,11 @@ export default function LogoRail() {
         <p className="mb-4 text-center text-xs font-medium uppercase tracking-[0.2em] text-slate-400">
           Monitored sports books (Not Associated)
         </p>
-        <div className="grid grid-cols-2 gap-3 sm:grid-cols-3 lg:grid-cols-4">
+        <div className="grid grid-cols-2 gap-3 sm:grid-cols-3 lg:grid-cols-5">
           {partnerLogoPlaceholders.map((slot) => (
             <div
               key={slot.id}
-              className="mx-auto flex h-24 w-24 items-center justify-center rounded-md border border-slate-700 bg-slate-900/50 p-2 sm:h-28 sm:w-28"
+              className="mx-auto flex h-24 w-24 items-center justify-center rounded-md border border-slate-700 bg-slate-900/50 p-2 transition-all duration-300 hover:-translate-y-1 hover:border-[#64FFDA80] hover:shadow-[0_8px_22px_rgba(100,255,218,0.22)] sm:h-28 sm:w-28"
               role="img"
               aria-label={slot.label}
             >
@@ -30,7 +30,7 @@ export default function LogoRail() {
                   height={112}
                 />
               ) : (
-                <span className="text-xs font-medium uppercase tracking-wider text-slate-500">
+                <span className="text-xs font-semibold uppercase tracking-[0.16em] text-[#E0E1DD]">
                   {slot.text}
                 </span>
               )}

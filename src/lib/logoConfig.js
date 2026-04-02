@@ -38,4 +38,9 @@ export const partnerLogoPlaceholders = [
     text: 'FanDuel',
     src: '/brand/supported/fanduel.svg',
   },
+  {
+    id: 'sportsbook-e',
+    label: 'Additional monitored sportsbooks',
+    text: 'and more',
+  },
 ]
