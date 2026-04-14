@@ -5,6 +5,7 @@ import { z } from 'zod'
 import { trackEvent } from '../../lib/analytics'
 import { submitWaitlistEntry } from '../../lib/waitlistClient'
 import Button from './Button'
+import { usePlatform } from '../../lib/PlatformContext'
 
 const waitlistSchema = z.object({
   email: z.email({ message: 'Please enter a valid email address.' }),
@@ -14,6 +15,7 @@ const waitlistSchema = z.object({
 export default function WaitlistForm({ source = 'hero', className = '' }) {
   const [status, setStatus] = useState('idle')
   const [errorMessage, setErrorMessage] = useState('')
+  const { platform } = usePlatform()
 
   const {
     register,
@@ -40,10 +42,11 @@ export default function WaitlistForm({ source = 'hero', className = '' }) {
     try {
       await submitWaitlistEntry({
         email: values.email,
-        source,
+        source: `${source}-${platform}`,
       })
     } catch (error) {
-      const message =
+...
+
         error instanceof Error ? error.message : 'Submission failed. Please try again.'
       const isDuplicateEmail =
         typeof message === 'string' &&
@@ -59,7 +62,7 @@ export default function WaitlistForm({ source = 'hero', className = '' }) {
 
     setStatus('success')
     trackEvent('waitlist_submit_success', {
-      source,
+      source: `${source}-${platform}`,
     })
     reset()
   }

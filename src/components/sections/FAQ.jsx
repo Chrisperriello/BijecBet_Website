@@ -20,6 +20,12 @@ const faqItems = [
     answer:
       'The platform is designed for near real-time detection so opportunities can be acted on quickly.',
   },
+  {
+    id: 'faq-4',
+    question: 'Which platforms are supported?',
+    answer:
+      'BijecBet currently supports both Windows and Mac. You can select your platform in the navigation bar to see optimized content and download options.',
+  },
 ]
 
 export default function FAQ() {
