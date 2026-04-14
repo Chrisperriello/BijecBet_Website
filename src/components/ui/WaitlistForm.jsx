@@ -45,12 +45,13 @@ export default function WaitlistForm({ source = 'hero', className = '' }) {
         source: `${source}-${platform}`,
       })
     } catch (error) {
-...
-
-        error instanceof Error ? error.message : 'Submission failed. Please try again.'
+      // We define the message here so the code below can use it
+      const message = error instanceof Error ? error.message : 'Submission failed. Please try again.'
+      
       const isDuplicateEmail =
         typeof message === 'string' &&
         (message.toLowerCase().includes('duplicate') || message.toLowerCase().includes('unique'))
+      
       setErrorMessage(
         isDuplicateEmail
           ? "You're already on the waitlist with this email."
