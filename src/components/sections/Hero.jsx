@@ -87,7 +87,7 @@ export default function Hero() {
             height={64}
           />
         <h1 className="mt-6 text-4xl font-semibold leading-tight sm:text-5xl">
-          think less. win more.
+          Think Less. Win More.
         </h1>
         <p className="mx-auto mt-4 max-w-xl text-base text-slate-300">
           Join the waitlist for the private beta for real-time arbitrage analytics across books
