@@ -4,6 +4,7 @@ import { motion, useReducedMotion } from 'framer-motion'
 import Section from '../layout/Section'
 import Button from '../ui/Button'
 import WaitlistForm from '../ui/WaitlistForm'
+import { usePlatform } from '../../lib/PlatformContext'
 
 const marketFeedItems = [
   'DraftKings: +110 | FanDuel: -105 -> 2.4% Arb',
@@ -75,6 +76,8 @@ function LiveMarketFeed() {
 }
 
 export default function Hero() {
+  const { platform } = usePlatform()
+
   return (
     <Section id="hero">
       <div className="mx-auto w-full max-w-4xl rounded-md border border-slate-800 bg-surface p-8 text-center">
@@ -93,6 +96,25 @@ export default function Hero() {
           Join the waitlist for the private beta for real-time arbitrage analytics across books
           and exchanges.
         </p>
+        <div className="mt-4 flex justify-center">
+          <span className="inline-flex items-center gap-1.5 rounded-full border border-brandTeal/20 bg-brandTeal/5 px-3 py-1 text-xs font-medium text-brandTeal">
+            {platform === 'mac' ? (
+              <>
+                <svg className="h-3 w-3" fill="currentColor" viewBox="0 0 24 24">
+                  <path d="M17.057 12.781c.032 2.609 2.247 3.48 2.282 3.497-.02.067-.355 1.214-1.16 2.394-.696 1.02-1.419 2.035-2.553 2.056-1.113.021-1.471-.66-2.744-.66-1.272 0-1.666.639-2.724.68-1.096.042-1.921-.954-2.62-1.975-1.429-2.09-2.523-5.91-1.049-8.471.733-1.272 2.039-2.079 3.447-2.1.1.069.066.023.066.023 1.076.082 2.09.821 2.744.821.655 0 1.884-.897 3.178-.767 1.23.051 2.222.651 2.871 1.603-2.6.438-2.185 3.193.282 3.912zm-3.232-7.85c.579-.705.967-1.685.86-2.66-.84.034-1.859.56-2.461 1.265-.54.629-.982 1.628-.854 2.583.937.072 1.876-.483 2.455-1.188z" />
+                </svg>
+                Optimized for Mac
+              </>
+            ) : (
+              <>
+                <svg className="h-3 w-3" fill="currentColor" viewBox="0 0 24 24">
+                  <path d="M0 3.449L9.75 2.1V11.7H0V3.449zm0 17.102L9.75 21.9V12.3H0v8.251zM10.5 2V11.7H24V0L10.5 2zm0 19.9L24 24V12.3H10.5v9.601z" />
+                </svg>
+                Optimized for Windows
+              </>
+            )}
+          </span>
+        </div>
         <LiveMarketFeed />
         <WaitlistForm source="hero" className="mx-auto mt-8" />
         <div className="mt-6">

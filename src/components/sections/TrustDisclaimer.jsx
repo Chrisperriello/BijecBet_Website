@@ -15,7 +15,7 @@ export default function TrustDisclaimer() {
               style={{ color: '#E0E1DD' }}
             >
               <li>BijecBet is an analytics platform, not a sportsbook.</li>
-              <li>We do not accept wagers or hold bettor funds.</li>
+              <li>We do not accept wagers or hold better funds.</li>
               <li>Market data is monitored continuously for timing accuracy.</li>
               <li>Operational controls are designed for transparent signal output.</li>
             </ul>

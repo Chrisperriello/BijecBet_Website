@@ -10,24 +10,27 @@ import LogoRail from './components/sections/LogoRail'
 import ManualVsBijec from './components/sections/ManualVsBijec'
 import ProfitCalculator from './components/sections/ProfitCalculator'
 import TrustDisclaimer from './components/sections/TrustDisclaimer'
+import { PlatformProvider } from './lib/PlatformContext'
 
 export default function App() {
   return (
-    <div className="min-h-screen">
-      <Navbar />
-      <main>
-        <BackgroundBanner />
-        <Hero />
-        <HowItWorks />
-        <Features />
-        <ManualVsBijec />
-        <ProfitCalculator />
-        <TrustDisclaimer />
-        <LogoRail />
-        <FAQ />
-        <FinalCTA />
-      </main>
-      <Footer />
-    </div>
+    <PlatformProvider>
+      <div className="min-h-screen">
+        <Navbar />
+        <main>
+          <BackgroundBanner />
+          <Hero />
+          <HowItWorks />
+          <Features />
+          <ManualVsBijec />
+          <ProfitCalculator />
+          <TrustDisclaimer />
+          <LogoRail />
+          <FAQ />
+          <FinalCTA />
+        </main>
+        <Footer />
+      </div>
+    </PlatformProvider>
   )
 }
