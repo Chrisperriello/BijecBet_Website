@@ -3,8 +3,9 @@ import { trackEvent } from '../../lib/analytics'
 import { motion, useReducedMotion } from 'framer-motion'
 import Section from '../layout/Section'
 import Button from '../ui/Button'
-import WaitlistForm from '../ui/WaitlistForm'
 import { usePlatform } from '../../lib/PlatformContext'
+
+const BETA_URL = 'https://bijec.web.app'
 
 const marketFeedItems = [
   'DraftKings: +110 | FanDuel: -105 -> 2.4% Arb',
@@ -93,8 +94,7 @@ export default function Hero() {
           Think Less. Win More.
         </h1>
         <p className="mx-auto mt-4 max-w-xl text-base text-slate-300">
-          Join the waitlist for the private beta for real-time arbitrage analytics across books
-          and exchanges.
+          Access the private beta for real-time arbitrage analytics across books and exchanges.
         </p>
         <div className="mt-4 flex justify-center">
           <span className="inline-flex items-center gap-1.5 rounded-full border border-brandTeal/20 bg-brandTeal/5 px-3 py-1 text-xs font-medium text-brandTeal">
@@ -116,7 +116,11 @@ export default function Hero() {
           </span>
         </div>
         <LiveMarketFeed />
-        <WaitlistForm source="hero" className="mx-auto mt-8" />
+        <div className="mt-8">
+          <a href={BETA_URL}>
+            <Button>Go to beta</Button>
+          </a>
+        </div>
         <div className="mt-6">
           <a
             href="#how-it-works"
